@@ -6,19 +6,25 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
+import { HeroService } from './hero.service';
 import { HeroFormComponent } from './hero/hero-form.component';
+import { SelectSystemComponent } from './select-system/select-system.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([{ path: '', component: ProductListComponent }]),
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
     HeroFormComponent,
+    SelectSystemComponent,
   ],
+  providers: [HeroService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

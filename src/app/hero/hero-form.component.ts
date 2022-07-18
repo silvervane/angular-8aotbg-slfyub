@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Location } from '@angular/common';
 import { Hero } from '../hero';
 
 @Component({
@@ -14,7 +14,13 @@ export class HeroFormComponent {
 
   submitted = false;
 
+  constructor(private location: Location) {}
+
   onSubmit() {
     this.submitted = true;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
